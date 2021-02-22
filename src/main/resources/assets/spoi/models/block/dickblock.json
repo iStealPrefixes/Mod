@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "spoi:blocks/dikblok",
+    "particle": "spoi:blocks/dikblok"
+  }
+}

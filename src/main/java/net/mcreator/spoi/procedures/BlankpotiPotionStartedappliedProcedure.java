@@ -1,19 +1,11 @@
 package net.mcreator.spoi.procedures;
 
-import net.minecraftforge.fml.server.ServerLifecycleHooks;
-
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.spoi.SpoiModElements;
-
-import java.util.Map;
-
 @SpoiModElements.ModElement.Tag
 public class BlankpotiPotionStartedappliedProcedure extends SpoiModElements.ModElement {
+
 	public BlankpotiPotionStartedappliedProcedure(SpoiModElements instance) {
 		super(instance, 8);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -22,7 +14,9 @@ public class BlankpotiPotionStartedappliedProcedure extends SpoiModElements.ModE
 				System.err.println("Failed to load dependency entity for procedure BlankpotiPotionStartedapplied!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		String xuwu = "";
 		String full = "";
 		full = (String) ((entity) + "" + ("is now gay"));
@@ -31,5 +25,7 @@ public class BlankpotiPotionStartedappliedProcedure extends SpoiModElements.ModE
 			if (mcserv != null)
 				mcserv.getPlayerList().sendMessage(new StringTextComponent((full)));
 		}
+
 	}
+
 }
