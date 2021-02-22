@@ -143,6 +143,70 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gun"
+    },
+    {
+      "name": "Aaaaaa",
+      "type": "function",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aaaaaa"
+    },
+    {
+      "name": "BlonkCommandExecuted",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blonk_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BlankpotiPotionStartedapplied",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blankpoti_potion_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Blankpoti",
+      "type": "potion",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blankpoti"
     }
   ],
   "variable_elements": [],
@@ -167,9 +231,14 @@
   "language_map": {
     "en_us": {
       "subtitles.calming": "calmingmusic",
+      "effect.blankpoti": "Blankpoti",
+      "item.minecraft.potion.effect.blankpoti": "Blankpoti",
       "subtitles.whooshing": "uwu",
       "item.spoi.gun": "Gun",
-      "item.spoi.spongebob": "Spongebob Portal Igniter"
+      "item.minecraft.splash_potion.effect.blankpoti": "Splash Blankpoti",
+      "item.spoi.spongebob": "Spongebob Portal Igniter",
+      "item.minecraft.lingering_potion.effect.blankpoti": "Lingering Blankpoti",
+      "item.minecraft.tipped_arrow.effect.blankpoti": "Arrow of Blankpoti"
     }
   },
   "workspaceSettings": {

@@ -1,6 +1,11 @@
 {
   "subtitles.calming": "calmingmusic",
+  "effect.blankpoti": "Blankpoti",
+  "item.minecraft.potion.effect.blankpoti": "Blankpoti",
   "subtitles.whooshing": "uwu",
   "item.spoi.gun": "Gun",
-  "item.spoi.spongebob": "Spongebob Portal Igniter"
+  "item.minecraft.splash_potion.effect.blankpoti": "Splash Blankpoti",
+  "item.spoi.spongebob": "Spongebob Portal Igniter",
+  "item.minecraft.lingering_potion.effect.blankpoti": "Lingering Blankpoti",
+  "item.minecraft.tipped_arrow.effect.blankpoti": "Arrow of Blankpoti"
 }

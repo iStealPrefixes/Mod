@@ -1,0 +1,9 @@
+{
+  "_fv": 13,
+  "_type": "function",
+  "definition": {
+    "code": "say hello\n",
+    "name": "aaaaaa",
+    "namespace": "mod"
+  }
+}
