@@ -1,0 +1,55 @@
+{
+  "_fv": 13,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "If you're reading this",
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "name": "If you're reading this",
+          "x": 154,
+          "y": 57
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": " your cock is small",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": " your cock is small",
+          "x": 163,
+          "y": 82
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "No u",
+          "onClick": {
+            "name": "Buttonclickppno"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "No u",
+          "x": 191,
+          "y": 130
+        }
+      }
+    ]
+  }
+}

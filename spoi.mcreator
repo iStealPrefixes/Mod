@@ -143,6 +143,57 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gun"
+    },
+    {
+      "name": "Buttonclickppno",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "buttonclickppno",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Wow",
+      "type": "gui",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wow"
+    },
+    {
+      "name": "Dickblock",
+      "type": "block",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dickblock"
     }
   ],
   "variable_elements": [],
@@ -169,7 +220,8 @@
       "subtitles.calming": "calmingmusic",
       "subtitles.whooshing": "uwu",
       "item.spoi.gun": "Gun",
-      "item.spoi.spongebob": "Spongebob Portal Igniter"
+      "item.spoi.spongebob": "Spongebob Portal Igniter",
+      "block.spoi.dickblock": "Dickblock"
     }
   },
   "workspaceSettings": {
