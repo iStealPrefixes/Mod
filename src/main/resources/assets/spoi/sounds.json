@@ -1,0 +1,22 @@
+{
+  "calming": {
+    "category": "master",
+    "subtitle": "subtitles.calming",
+    "sounds": [
+      {
+        "name": "spoi:recording_2",
+        "stream": false
+      }
+    ]
+  },
+  "whooshing": {
+    "category": "master",
+    "subtitle": "subtitles.whooshing",
+    "sounds": [
+      {
+        "name": "spoi:recording_2_1",
+        "stream": false
+      }
+    ]
+  }
+}

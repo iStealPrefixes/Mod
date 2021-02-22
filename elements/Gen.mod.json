@@ -1,0 +1,50 @@
+{
+  "_fv": 13,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Generator",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Generator",
+          "x": 187,
+          "y": 45
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "on",
+          "width": 35,
+          "height": 20,
+          "name": "on",
+          "x": 191,
+          "y": 92
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "off",
+          "width": 40,
+          "height": 20,
+          "name": "off",
+          "x": 189,
+          "y": 116
+        }
+      }
+    ]
+  }
+}

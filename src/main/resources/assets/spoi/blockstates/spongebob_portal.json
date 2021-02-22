@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "spoi:block/spongebob_portal_ew"
+    },
+    "axis=x": {
+      "model": "spoi:block/spongebob_portal_ns"
+    }
+  }
+}
