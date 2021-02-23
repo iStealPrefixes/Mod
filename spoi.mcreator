@@ -145,32 +145,6 @@
       "registry_name": "gun"
     },
     {
-      "name": "Blankpoti",
-      "type": "potion",
-      "sortid": 8,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "blankpoti"
-    },
-    {
-      "name": "BlankpotiPotionStartedapplied",
-      "type": "procedure",
-      "sortid": 8,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "blankpoti_potion_startedapplied",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "Aaaaaa",
       "type": "function",
       "sortid": 6,
@@ -180,13 +154,13 @@
       "registry_name": "aaaaaa"
     },
     {
-      "name": "BlonkCommandExecuted",
+      "name": "FlamesBulletHitsBlock",
       "type": "procedure",
       "sortid": 7,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "blonk_command_executed",
+      "registry_name": "flames_bullet_hits_block",
       "metadata": {
         "dependencies": [
           {
@@ -209,55 +183,126 @@
       }
     },
     {
-      "name": "Dickblock",
-      "type": "block",
+      "name": "FlamesBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "flames_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FlamesWhileBulletFlyingTick",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "flames_while_bullet_flying_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Flames",
+      "type": "gun",
       "sortid": 7,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "dickblock"
+      "registry_name": "flames"
     },
     {
-      "name": "Buttonclickppno",
+      "name": "FlamthrowerBulletHitsBlock",
       "type": "procedure",
-      "sortid": 6,
+      "sortid": 10,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "buttonclickppno",
+      "registry_name": "flamthrower_bullet_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FlamthrowerBulletHitsPlayer",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "flamthrower_bullet_hits_player",
       "metadata": {
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       }
     },
     {
-      "name": "Wow",
-      "type": "gui",
-      "sortid": 6,
+      "name": "Flamthrower",
+      "type": "gun",
+      "sortid": 10,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "wow"
+      "registry_name": "flamthrower"
     }
   ],
   "variable_elements": [],
@@ -282,10 +327,11 @@
   "language_map": {
     "en_us": {
       "subtitles.calming": "calmingmusic",
+      "item.spoi.flamthrower": "Flamthrower",
+      "item.spoi.flames": "rpg",
       "subtitles.whooshing": "uwu",
       "item.spoi.gun": "Gun",
-      "item.spoi.spongebob": "Spongebob Portal Igniter",
-      "block.spoi.dickblock": "Dickblock"
+      "item.spoi.spongebob": "Spongebob Portal Igniter"
     }
   },
   "workspaceSettings": {
