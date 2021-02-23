@@ -40,15 +40,6 @@
       "registry_name": "spongebob"
     },
     {
-      "name": "Gen",
-      "type": "gui",
-      "sortid": 2,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "gen"
-    },
-    {
       "name": "GunBulletHitsBlock",
       "type": "procedure",
       "sortid": 3,
@@ -145,55 +136,13 @@
       "registry_name": "gun"
     },
     {
-      "name": "Buttonclickppno",
-      "type": "procedure",
+      "name": "Statue1",
+      "type": "mob",
       "sortid": 6,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "buttonclickppno",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Wow",
-      "type": "gui",
-      "sortid": 6,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "wow"
-    },
-    {
-      "name": "Dickblock",
-      "type": "block",
-      "sortid": 7,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "dickblock"
+      "registry_name": "statue_1"
     }
   ],
   "variable_elements": [],
@@ -218,10 +167,11 @@
   "language_map": {
     "en_us": {
       "subtitles.calming": "calmingmusic",
+      "item.spoi.statue_1_spawn_egg": "Statue Spawn Egg",
+      "entity.spoi.statue_1": "Statue",
       "subtitles.whooshing": "uwu",
       "item.spoi.gun": "Gun",
-      "item.spoi.spongebob": "Spongebob Portal Igniter",
-      "block.spoi.dickblock": "Dickblock"
+      "item.spoi.spongebob": "Spongebob Portal Igniter"
     }
   },
   "workspaceSettings": {

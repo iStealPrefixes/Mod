@@ -9,15 +9,13 @@ import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.energy.EnergyStorage;
+import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.World;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -30,7 +28,6 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.NetworkManager;
@@ -47,33 +44,31 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.client.Minecraft;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.FallingBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.spoi.gui.WowGui;
+import net.mcreator.spoi.gui.GenGui;
 import net.mcreator.spoi.SpoiModElements;
 
 import javax.annotation.Nullable;
 
 import java.util.stream.IntStream;
-import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
 @SpoiModElements.ModElement.Tag
-public class DickblockBlock extends SpoiModElements.ModElement {
-	@ObjectHolder("spoi:dickblock")
+public class GermanatorBlock extends SpoiModElements.ModElement {
+	@ObjectHolder("spoi:germanator")
 	public static final Block block = null;
-	@ObjectHolder("spoi:dickblock")
+	@ObjectHolder("spoi:germanator")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
-	public DickblockBlock(SpoiModElements instance) {
-		super(instance, 7);
+	public GermanatorBlock(SpoiModElements instance) {
+		super(instance, 8);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -86,22 +81,12 @@ public class DickblockBlock extends SpoiModElements.ModElement {
 
 	@SubscribeEvent
 	public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
-		event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("dickblock"));
+		event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("germanator"));
 	}
 	public static class CustomBlock extends FallingBlock {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).lightValue(0).doesNotBlockMovement());
-			setRegistryName("dickblock");
-		}
-
-		@Override
-		public boolean isBeaconBase(BlockState state, IWorldReader world, BlockPos pos, BlockPos beacon) {
-			return true;
-		}
-
-		@Override
-		public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction direction, IPlantable plantable) {
-			return true;
+			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).lightValue(0));
+			setRegistryName("germanator");
 		}
 
 		@Override
@@ -110,27 +95,6 @@ public class DickblockBlock extends SpoiModElements.ModElement {
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
 			return Collections.singletonList(new ItemStack(this, 1));
-		}
-
-		@OnlyIn(Dist.CLIENT)
-		@Override
-		public void animateTick(BlockState state, World world, BlockPos pos, Random random) {
-			super.animateTick(state, world, pos, random);
-			PlayerEntity entity = Minecraft.getInstance().player;
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			if (true)
-				for (int l = 0; l < 4; ++l) {
-					double d0 = (x + random.nextFloat());
-					double d1 = (y + random.nextFloat());
-					double d2 = (z + random.nextFloat());
-					int i1 = random.nextInt(2) * 2 - 1;
-					double d3 = (random.nextFloat() - 0.5D) * 0.5D;
-					double d4 = (random.nextFloat() - 0.5D) * 0.5D;
-					double d5 = (random.nextFloat() - 0.5D) * 0.5D;
-					world.addParticle(ParticleTypes.CRIT, d0, d1, d2, d3, d4, d5);
-				}
 		}
 
 		@Override
@@ -144,12 +108,12 @@ public class DickblockBlock extends SpoiModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Dickblock");
+						return new StringTextComponent("Germanator");
 					}
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new WowGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
+						return new GenGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
 			}
@@ -219,6 +183,8 @@ public class DickblockBlock extends SpoiModElements.ModElement {
 				this.stacks = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			}
 			ItemStackHelper.loadAllItems(compound, this.stacks);
+			if (compound.get("energyStorage") != null)
+				CapabilityEnergy.ENERGY.readNBT(energyStorage, null, compound.get("energyStorage"));
 		}
 
 		@Override
@@ -227,6 +193,7 @@ public class DickblockBlock extends SpoiModElements.ModElement {
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.stacks);
 			}
+			compound.put("energyStorage", CapabilityEnergy.ENERGY.writeNBT(energyStorage, null));
 			return compound;
 		}
 
@@ -260,7 +227,7 @@ public class DickblockBlock extends SpoiModElements.ModElement {
 
 		@Override
 		public ITextComponent getDefaultName() {
-			return new StringTextComponent("dickblock");
+			return new StringTextComponent("germanator");
 		}
 
 		@Override
@@ -270,12 +237,12 @@ public class DickblockBlock extends SpoiModElements.ModElement {
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new WowGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new GenGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Dickblock");
+			return new StringTextComponent("Germanator");
 		}
 
 		@Override
@@ -308,10 +275,33 @@ public class DickblockBlock extends SpoiModElements.ModElement {
 			return true;
 		}
 		private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
+		private final EnergyStorage energyStorage = new EnergyStorage(400000, 200, 200, 969) {
+			@Override
+			public int receiveEnergy(int maxReceive, boolean simulate) {
+				int retval = super.receiveEnergy(maxReceive, simulate);
+				if (!simulate) {
+					markDirty();
+					world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 2);
+				}
+				return retval;
+			}
+
+			@Override
+			public int extractEnergy(int maxExtract, boolean simulate) {
+				int retval = super.extractEnergy(maxExtract, simulate);
+				if (!simulate) {
+					markDirty();
+					world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 2);
+				}
+				return retval;
+			}
+		};
 		@Override
 		public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
 			if (!this.removed && facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
 				return handlers[facing.ordinal()].cast();
+			if (!this.removed && capability == CapabilityEnergy.ENERGY)
+				return LazyOptional.of(() -> energyStorage).cast();
 			return super.getCapability(capability, facing);
 		}
 

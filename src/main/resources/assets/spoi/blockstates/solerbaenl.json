@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "spoi:block/solerbaenl"
+    },
+    "type=top": {
+      "model": "spoi:block/solerbaenl_top"
+    },
+    "type=double": {
+      "model": "spoi:block/solerbaenl_full"
+    }
+  }
+}
